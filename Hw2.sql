@@ -12,7 +12,8 @@ create table if not exists album(
 );
 
 create table if not exists track(
-    track_id serial primary key references album(album_id),
+    track_id serial primary key,
     track_name varchar(4),
+    album_id varchar(4) references album(album_id),
     time integer
 );
